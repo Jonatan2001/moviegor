@@ -1,0 +1,117 @@
+<html>
+<title>
+Contact Page
+</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+form {border: 3px solid #f7b500; width: 600px; border: 5px, #f7b500;}
+.header1 {
+color: #f7b500;
+font-family: Impact;
+font-size: 14vw;
+text-align: center;
+} 
+
+.username{
+ width: 400px;
+ padding: 14px 25px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 2px solid #f7b500
+ box-sizing: border-box;
+}
+
+.password{
+ width: 400px;
+ padding: 14px 25px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 2px solid #f7b500
+ box-sizing: border-box;
+}
+
+.button1 
+ {
+ background-color: black; 
+ font-family: Impact;
+ color: #f7b500;
+ border-radius: 128px;
+ font-size: 400%;
+ padding: 20px;
+ }
+
+.button1:hover {
+  opacity: 0.75;
+}
+
+cancelbutton {
+ background-color: #f7b500
+ color: black
+ padding: 14px 25px;
+ border: none;
+ cursor: pointer;
+ width: 400px;
+}
+
+.cancelbutton:hover {
+  opacity: 0.75;
+}
+
+.box {
+ padding: 10px;
+}
+</style>
+</head>
+
+
+<body style = "background-color: black"> <!--In this line I have created the main body of the webpage and decleared it's background to be black. -->
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #f7b500 "> <!-- In this line I have created a navigation bar, I made it so that it would be able to expand if the screen soze os reduced and I set it's background colour to orange.-->
+  <a class="navbar-brand" href="mainpage.html">Main Page</a> <!-- I have created a button, called Main Page and I hyperlinked it so when clicked it would take the user to the main page of the site.-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation" background-color= "#f7b500"> <!-- I have set the bar to ensure that it woul;d be able toe exapnd and collapse and I set its back ground colour to orange.-->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+	  <a class="nav-item nav-link active" href="moviespage.html">Movies</a> <!-- I have created a hyperlink in this lable so that it would take the user to the movies page of the site.-->
+      <a class="nav-item nav-link active" href="showtimespage.html">Show Times<span class="sr-only">(current)</span></a> <!-- I have created a hyperlink in this lable so that it would take the user to the show times page of the site.-->
+      <a class="nav-item nav-link active" href="ticketspage.html">Tickets</a> <!-- I have created a hyperlink in this lable so that it would take the user to the tickets page of the site.-->
+	  <a class="nav-item nav-link active" href="index.html">Login</a> <!-- I have created a hyperlink in this lable so that it would take the user to the login page of the site.-->
+	  </div>
+  </div>
+</nav>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- In this line I have imported extra styling for the navigation bar.-->
+<h1 style = "color: #f7b500; font-family: Impact; font-size: 10vw; text-align: center;">   Contact Page </h1> <!-- In this line I have created the main header "Contact Page" for the website, I have set its style in this line asweel, it's font type, size and aligment.-->
+
+<form name = "contact" onsubmit="return(contact());" > <!-- In this line I have created a new form, named it contact and I have connected it to the function contact, by creating the onsubmit within this line.-->
+   <div class="container"> <!-- I have created a new class called container in the form.-->
+    <label for="Firstname" style = "color: #f7b500; font-size: 20px;"><b>First Name</b></label> <!-- In this line I created a new lable, I called it First Name and it's output on the webpage will also be First Name, I have defined its style as well to ensure that it would have the correct colour, font type and size. --> 
+    <input class ="username" type="text" placeholder="Enter First Name" name="firstname" required> <!-- In this line I have created an input box, I called it First Name as well, I made it so when it's empty it should have the phrase "Enter First Name" in the textbox. I defiend it to be text to make sure that it would be visible, I made it requried this would mean that the user couldn't procedd to the next webpage without inputting their first name.-->
+	<label for="Lastname" style = "color: #f7b500; font-size: 20px;"><b>Last Name</b></label> <!-- In this line I created a new lable, I called it Last Name and it's output on the webpage will also be Last Name, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class ="username" type="text" placeholder="Enter Last Name" name="lastname" required> <!-- In this line I have created an input box, I called it Last Name as well, I made it so when it's empty it should have the phrase "Enter Last Name" in the textbox. I defiend it to be text to make sure that it would be visible, I made it requried this would mean that the user couldn't procedd to the next webpage without inputting their last name.-->
+    <label for="Phone" style = "color: #f7b500; font-size: 20px;"><b>Phone Number</b></label> <!-- In this line I created a new lable, I called it Phone and it's output on the webpage will be Phone Number, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class ="username" type="text" placeholder="Enter Phone Number" name="Phone" required> <!-- In this line I have created an input box, I called it Phone as well, I made it so when it's empty it should have the phrase "Enter Phone Number" in the textbox. I defiend it to be text to make sure that it would be visible, I made it requried this would mean that the user couldn't procedd to the next webpage without inputting their phone number.-->
+	<label for="email" style = "color: #f7b500; font-size: 20px;"><b>Email</b></label> <!-- In this line I created a new lable, I called it Email and it's output on the webpage will also be Email, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class ="username" type="text" placeholder="Enter Email" name="Email" required> <!-- In this line I have created an input box, I called it Email as well, I made it so when it's empty it should have the phrase "Enter Email" in the textbox. I defiend it to be text to make sure that it would be visible, I made it requried this would mean that the user couldn't procedd to the next webpage without inputting their email.-->
+	<br>
+	<label style = "color: #f7b500; font-size: 20px;">Gender</label> <!-- I have created a new label which would show the word "Gender" on the screen and i also set its color, and font size.-->
+	<br>
+    <label style = "color: #f7b500; font-size: 20px;"><input type="radio"  name="selectforms" value="male" onclick="calculateTotal()" />male</label><br/>
+    <label style = "color: #f7b500; font-size: 20px;"><input type="radio"  name="selectforms" value="female" onclick="calculateTotal()" />female</label><br/> <!-- In these two lines I have created two options, "male" or "female" the user will need to click on the little dot next to them to select the one they would like to have.-->
+    <br/>
+	<label for="Address" style = "color: #f7b500; font-size: 20px;"><b>Address</b></label> <!-- In this line I created a new lable, I called it Address and it's output on the webpage will also be Address, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class ="username" type="text" placeholder="Enter Address" name="Address" required> <!-- In this line I have created an input box, I called it Address as well, I made it so when it's empty it should have the phrase "Enter Address" in the textbox. I defiend it to be text to make sure that it would be visible, I made it requried this would mean that the user couldn't procedd to the next webpage without inputting their address.-->
+      <br>
+    <label for="postcode" style = "color: #f7b500; font-size: 20px;"><b>Post Code</b></label> <!-- In this line I created a new lable, I called it postcode and it's output on the webpage will be Post Code, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class = "username" type="text" placeholder="Enter Post Code" name="PostCode" required > <!-- In this line I have created an input box, I called it Address as well, I made it so when it's empty it should have the phrase "Enter Address" in the textbox. I defiend it to be text to make sure that it would be visible, I made it requried this would mean that the user couldn't procedd to the next webpage without inputting their post code.-->
+	<label for="Comments" style = "color: #f7b500; font-size: 20px;"><b>Anything You'd Like To Tell Us</b></label><!-- In this line I created a new lable, I called it Comments and it's output on the webpage will be Anything You'd Like To Tell Us, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class = "username" type="text" style = "color: #f7b500; font-size: 20px;  width: 550px; height: 550px; padding: px 25px; margin: 8px 20; display: inline-block;  border: 2px solid #f7b500 box-sizing: border-box;" placeholder="Please leave a comment..." name="Comments" required > <!-- In this line I have created an input box, I called it Comments as well, I made it so when it's empty it should have the phrase "Please leave a comment..." in the textbox. I defiend it to be text to make sure that it would be visible, I made it requried this would mean that the user couldn't procedd to the next webpage without inputting a comment.-->
+        <br>
+  </div>
+  <div>
+  <button class = "button1" type="submit" onclick = "contact();">Submit</button> <!-- I have made this button and named it Submit which would be its outputted value on the screen as well, I connected to the button1 class to define it's style. If this button is pressed the oage will regenerate it self to be a blank one, thus the submitng has been completed.-->
+  </div>
+</form>
+
+</body>
+</html>

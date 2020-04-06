@@ -1,0 +1,103 @@
+<html> <!-- This line means that the HTML code part of the website begins here. -->
+<title>
+Login Page
+</title>
+<head>
+<style>
+
+
+form {border: 3px solid #f7b500; width: 600px;} 
+.header1 {
+color: #f7b500; 
+font-family: Impact; 
+font-size: 14vw; 
+text-align: center;} 
+
+.username{
+ width: 400px;
+ padding: 14px 25px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 2px solid #f7b500
+ box-sizing: border-box;
+}
+
+.password{
+ width: 400px;
+ padding: 14px 25px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 2px solid #f7b500
+ box-sizing: border-box;
+}
+
+.button1 
+ {
+ background-color: black; 
+ font-family: Impact;
+ color: #f7b500;
+ border-radius: 128px;
+ font-size: 400%;
+ padding: 20px;
+ }
+
+.button1:hover {
+  opacity: 0.75;
+}
+
+cancelbutton {
+ background-color: #f7b500
+ color: black
+ padding: 14px 25px;
+ border: none;
+ cursor: pointer;
+ width: 400px;
+}
+
+.cancelbutton:hover {
+  opacity: 0.75;
+}
+
+.box {
+ padding: 10px;
+}
+</style>
+<script type = "text/javascript"> //In this line I have declared that I would use another language within the HTML section of this document, in this case JavaScript.
+   
+      function validate() { //In this line I have created a new function and named it validate().
+      
+		  if(( document.Login.Username.value != "" ) &&  ( document.Login.password.value != "" )) //In this line I have created an AND logical operation, which states that if the textbox Username and textbox Password both contain text then a reaction should take place
+		  alert( "Welcome!" ); //The aforementioned reaction is that a message will appear on the screen telling the user "Welcome!".
+			location.replace("mainpage.html");	//In this line I have declared that the current webpage will need to change to them main webpage of the website. 	  
+		} //The function is finished
+		function cancel() //In this line I have created a new function and named it cancel().
+		{
+		alert( "Goodbye!" ); //In this line if the cancel button is pressed a message saying "Goodbye!" will appear on the screen.
+		   location.replace("https://www.google.com/?safe=active&ssui=on"); //The current webpage will be replaced by Google.
+		} //The function is finished
+		
+</script> <!--In this line I have finished the JavaScript section of the webpage. -->
+</head>
+<body style = "background-color: black"> <!--In this line I have created the main body of the webpage and declared it's background to be black. -->
+
+<h1 class ="header1">MovieGo'R Login</h1> <!--In this line I have created the main header of the webpage, which in this would be "MovieGo'R Login". I have assigned it the class "header1" to ensure that it’s appearance will be connected to the style that was outlaid above in the .header1 section.-->
+<form name = "Login" onsubmit="return(validate());" action="mainpage.html" > <!--In this section I have created a form on the page, I have connected it to the validate function, by inputting the "onsubmit" section. I have also connected it to the main page of the website.-->
+   <div class="container"> <!-- I have created a new class in this line called container. -->
+    <label for="Username" style = " font-family: Impact; color: #f7b500; font-size: 20px;"><b>Username</b></label> <!-- In this line I created a new label, I called it Username and it's output on the webpage will also be Username, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class ="username" type="text" placeholder="Enter Username" name="Username" required> <!-- In this line I have created an input box, I called it Username as well, I made it so when it's empty it should have the phrase "Enter Username" in the textbox. I defined it to be text to make sure that it would be visible, I made it required this would mean that the user couldn't procced to the next webpage without inputting their username.-->
+      <br>
+    <label for="password" style = " font-family: Impact; color: #f7b500; font-size: 20px;"><b>Password</b></label> <!-- In this line I created a new label, I called it Password and its output on the webpage will also be Password, I have defined its style as well to ensure that it would have the correct colour, font type and size. -->
+    <input class = "password" type="password" placeholder="Enter Password" name="password" required > <!-- In this line I have created an input box, I called it Password as well, I made it so when it's empty it should have the phrase "Enter Password" in the textbox. I defined it to be password to make sure that it would be visible as dots on the screen, I made it required this would mean that the user couldn't procced to the next webpage without inputting their password.-->
+        <br>
+  </div>
+
+  <div >
+   <button class = "button1" type="submit">Login</button> <!-- I have created the Login button and it's saying "Login" on the screen, I have linked it to the button1 class in the style sheet to ensure that it would have the right appearance on the screen. I also linked it to onsubmit to ensure that it would connect to the right function, so if pressed it would take the user to the main webpage.-->
+   
+	<br>
+    <button type="button" class = "button1" onclick="cancel();">Cancel</button> <!-- I have created the cancel button and it's saying "Cancel" on the screen, I have linked it to the button1 class in the style sheet to ensure that it would have the right appearance on the screen. I also linked it to onsubmit to ensure that it would connect to the right function, so if pressed it would take the user to the main webpage.-->
+
+  </div>
+</form>
+</body>
+</html>

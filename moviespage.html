@@ -1,0 +1,65 @@
+<html>
+<title>
+Movie Page
+</title>
+<body style =" background-color: black"> <!--In this line I have created the main body of the webpage and decleared it's background to be black. -->
+
+ <nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #f7b500" > <!-- In this line I have created a navigation bar, I made it so that it would be able to expand if the screen soze os reduced and I set it's background colour to orange.-->
+  <a class="navbar-brand" href="mainpage.html">Main Page</a> <!-- I have created a button, called Main PAge and I hyperlinked it so when clicked it would take the user to the main page of the site.-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation" background-color= "#f7b500"> <!-- I have set the bar to ensure that it would be able toe exapnd and collapse and I set its back ground colour to orange.-->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+	  <a class="nav-item nav-link active" href="showtimespage.html">Show Times</a> <!-- I have created a hyperlink in this lable so that it would take the user to the show times page of the site.-->
+      <a class="nav-item nav-link active" href="ticketspage.html">Tickets <span class="sr-only">(current)</span></a> <!-- I have created a hyperlink in this lable so that it would take the user to the tickets page of the site.-->
+      <a class="nav-item nav-link active" href="index.html">Login</a> <!-- I have created a hyperlink in this lable so that it would take the user to the login page of the site.-->
+	  <a class="nav-item nav-link active" href="contactpage.html">Contact</a> <!-- I have created a hyperlink in this lable so that it would take the user to the contact page of the site.-->
+    </div>
+      <input id="searchbar" onkeyup="search_movies()" type="text" name="search" placeholder="Search movies.."> <!-- I have created searchbar and conencted it to the function movies, I had ensured that it would hold a text data type. When there isn't anything else in the seasrch bar it's automatic output would be "Search movies..."-->
+</nav>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- In this line I have imported extra styling for the navigation bar.-->
+<div>
+<h1  class= "movies" style = "color: #f7b500; font-family: Impact; font-size: 10vw; text-align: center;">   Action Movies </h1> <!-- In this line I have created the main header "Action Movies" for the website, I have set its style in this line aswell, it's font type, size and aligment.-->
+	<script>
+	function search_movies() { //in this line i have created a new fucntion called search_movies()
+    let input = document.getElementById('searchbar').value //in this lines i have created a variable called "input" and made it equal with any and all items that would be associeated with the ID "searchbar"
+    input=input.toLowerCase(); //in this line i have set input ot lower case 
+    let x = document.getElementsByClassName('movies'); //in this line i have created a new variable called x and i set it equal to the items that would be associeated with the class name "movies"
+      
+    for (i = 0; i < x.length; i++) { //in this line i have created a loop according to whcih i most eqaul to 0 and must be sortehr then the length of variable x after which i msut increase itself by 2.  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { //in this slection i set the condition that if the user input in the searchbox mathces none of the items that are linked to the movies Class Name, then nothing should be displayed on the page, otherwise what ever mathces what the user searches for should be displayed.
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+}
+</script>
+<br>
+<img src="missionimp.png" alt="mission" style="width:15%;" onclick = "actionmovies()"> <!--In this line I would import an image and I would set it to 15% of it's original size.-->
+<h2 style = "color: #f7b500; font-family: Impact; font-size: 28px;" class = "movies" >
+Mission Impossible: Fallout
+</h2> <!-- In this section I would create a second header, set its size to 28, set its colour to oriange and set its font family to Impact. I set the header to "Mission Impossible: Fallout"-->
+<p style = "color: #f7b500; font-family: Impact; font-size: 20px;" class = "movies"> 
+Tom Cruise returns in this thrilling new action movie, in the Mission Impossible Franchise, with Simon Pegg and Henry Cavil, to take on a new threat that not only seeks revenge on Ethan Hunt, but the whole rest of the world.
+</p> <!-- I created a paragraph describing the movie.-->
+
+<img src="skyfall.png" alt="skyfall" style="width:15%" onclick = "actionmovies()"> <!--In this line I would import an image and I would set it to 15% of it's original size.-->
+<h2 style = "color: #f7b500; font-family: Impact; font-size: 28px;" class = "movies">
+Skyfall
+</h2><!-- In this section I would create a second header, set its size to 28, set its colour to oriange and set its font family to Impact. I set the header to "Skyfall"-->
+<p style = "color: #f7b500; font-family: Impact; font-size: 20px;" class = "movies">
+Daniel Craig is back as 007, the greates spy in the world of cinema, this time on a mission to hunt down the man who has attacked MI6 and is out for his boss M's life.
+</p> <!-- I created a paragraph describing the movie.-->
+
+<script>
+function actionmovies() { //in this line i have created a new fucntion called actionmoives()
+ location.replace("showtimespage.html") } //In this line the current webpage would be repaleced by thr Action Movies page.
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- These three srcipts i have used to import the functionality for the navigation bar and anything else that would need things like Bootsrap.-->
+
+</html>

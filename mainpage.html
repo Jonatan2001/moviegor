@@ -1,0 +1,177 @@
+<html> 
+
+<title>
+Main Page
+</title>
+      
+<head> 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  width: 30%;
+  padding: 25px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table; 
+}
+  
+/* Slideshow container */
+.slideshow-container {
+  max-width: 2000px;
+  position: relative;
+  margin: auto;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head> 
+  
+<body style = "background-color: black">  <!--In this line i have created the main body of the webpage and declared it's background to be black. -->
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #f7b500 "> <!-- In this line i have created a navigation bar, i made it so that it would be able to expand if the screen size is reduced and i set it's background colour to orange.-->
+  <a class="navbar-brand" href="moviespage.html">Movies</a> <!-- i have created a button, called Movies and i hyperlinked it so when clicked it would take the user to the movies page of the site.-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation" background-color= "#f7b500"> <!-- i have set the bar to ensure that it would be able to expand and collapse and i set its back ground colour to orange.-->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+	  <a class="nav-item nav-link active" href="showtimespage.html">Show Times</a> <!-- i have created a hyperlink in this label so that it would take the user to the show times page of the site.-->
+      <a class="nav-item nav-link active" href="ticketspage.html">Tickets <span class="sr-only">(current)</span></a> <!-- i have created a hyperlink in this label so that it would take the user to the tickets page of the site.-->
+      <a class="nav-item nav-link active" href="index.html">Login</a> <!-- i have created a hyperlink in this label so that it would take the user to the login page of the site.-->
+	  <a class="nav-item nav-link active" href="contactpage.html">Contact</a> <!-- i have created a hyperlink in this label so that it would take the user to the contact page of the site.-->	  
+    </div>
+  </div>
+      <input id="searchbar" onkeyup="search_movies()" type="text" name="search" placeholder="Search movies..."> <!-- i have created search bar and connected it to the function search_movies, i had ensured that it would hold a text data type. When there isn't anything else in the search bar it's automatic output would be "Search movies..."-->
+        
+</nav>
+<h1  class= "movies" style = "color: #f7b500; font-family: Impact; font-size: 10vw; text-align: center;">   Welcome to Movie Go'R </h1> <!-- In this line i have created the main header "Welcome to Movie Go'R" for the website, i have set its style in this line as well, it's font type, size and aligment.-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- In this line i have imported extra styling for the navigation bar.-->
+<br>
+<div class="slideshow-container"> <!-- In this line i have created the first part of the slide show in the webpage.-->
+<div class="mySlides fade">
+<div class="row"> <!-- In this line i have created one of two rows in the slide show.-->
+  <div class="column"> <!-- In this line i have created the first column within the row.-->
+    <img class = "movies" src="missionimp.png" alt="mission" style="width:100%"> <!-- In this line i have imported a picture into the row.-->
+  </div>
+  <div class="column"> <!-- In this line i have created the first column within the row.-->
+    <img class = "movies" src="terminator.png" alt="terminator" style="width :100%"> <!-- In this line i have imported a picture into the row.-->
+  </div>
+  <div class="column"> <!-- In this line i have created the first column within the row.-->
+    <img class = "movies" src="skyfall.png" alt="Skyfall" style="width:100%"> <!-- In this line i have imported a picture into the row.-->
+  </div>
+</div> 
+</div>  
+</div>
+<div class="slideshow-container"> <!-- In this line i have created the second part of the slide show in the webpage.-->
+<div class="mySlides fade">
+  <div class="row"> <!-- In this line i have created the second of two rows in the slide show.-->
+  <div class="column"> <!-- In this line i have imported a picture into the row.-->
+    <img class = "movies" src="Avengers_Endgame_poster.jpg" alt="Avengers" style="width:100%"> <!-- In this line i have imported a picture into the row.-->
+  </div>
+  <div class="column"> <!-- In this line i have created the first column within the row.-->
+    <img class = "movies" src="Revenge.jpg" alt="Revenge" style="width :100%"> <!-- In this line i have imported a picture into the row.-->
+  </div>
+  <div class="column"> <!-- In this line i have imported a picture into the row.-->
+    <img class = "movies" src="Fast7.jpg" alt="Fasy7" style="width:100%"> <!-- In this line i have imported a picture into the row.-->
+  </div>
+</div> 
+</div>
+</div>
+</div>
+<br>
+<div style="text-align:center"> <!-- In this line i have centre aligned the images. -->
+  <span class="slideshow"></span> 
+  <span class="slideshow"></span> <!-- In these lines i have ensured that the spans of these slideshows would be within the slideshow class.-->
+</div>
+<script>
+var slideIndex = 0; //In this line i have defined the variable slideIndex and set it to 0.
+showSlides(); //in this line i called on the function showSlides.
+function showSlides() { //in this line i have defined a new function called it showSlides
+  var i; //In this line i created a new variable
+  var slides = document.getElementsByClassName("mySlides"); //In this line i created a new variable called it slides and set it equal to every item that was within the Class name "mySlides".
+  var slideshow = document.getElementsByClassName("slideshow"); //In this line i created a new variable called it slideshow and set it equal to every item that was within the Class name "slideshow".
+  for (i = 0; i < slides.length; i++) { //In this line i have set the variable i to 0, i must be less then length of variable slides, after which i must increase itself by 2 thus making it 2.
+    slides[i].style.display = "none";  //In this line i ensured that the display of the first set of row would be none thus it would disappear.
+  }
+  slideIndex++; //In this line the slideIndex would increase itself by 2.
+  if (slideIndex > slides.length) {slideIndex = 1} //In this line i set up a condition that’s dependent on the the slideIndex being greater then the length of the variable slides and the slideIndex is equal to 1
+  for (i = 0; i < slideshow.length; i++) { //In this line i have set the variable i to 0, i must be less then length of variable slides, after which i must increase itself by 2 thus making it 2.
+    slideshow[i].className = slideshow[i].className.replace(" active", ""); //In this line i would put the slideshow variable equal to slideshow and would active the replace part for the slideshow
+  }
+  slides[slideIndex-1].style.display = "block";  //I would set the first set of images to be blocked thus they'd disappear from the screen
+  slideshow[slideIndex-1].className += " active"; //I would set the second set of images to be active thus they'd appear from the screen
+  setTimeout(showSlides, 2000); // The images will change every 2 seconds
+}
+</script>
+<br>
+<button style = "background-color: black; font-family: Impact; color: #f7b500; border-radius: 128px; font-size: 500%; padding: 20px;" class = "movies"
+ type="button" onclick = "actionmovies()" 
+ > <!-- In this code i have created the button "Action Movies" i have linked it to the function actionmovies()-->
+ Action Movies
+ </button>
+	<script>
+ function actionmovies() { //in this line i have created a new function called actionmoives()
+ location.replace("moviespage.html") } //In this line the current webpage would be replaced by the Action Movies page.
+ </script>
+	<script>
+	function search_movies() { //in this line i have created a new function called search_movies()
+    let input = document.getElementById('searchbar').value //in this lines i have created a variable called "input" and made it equal with any and all items that would be associated with the ID "searchbar"
+    input=input.toLowerCase(); //in this line i have set input to lower case
+    let x = document.getElementsByClassName('movies'); //in this line i have created a new variable called x and i set it equal to the items that would be associated with the class name "movies"
+    for (i = 0; i < x.length; i++) {  //in this line i have created a loop according to which i most equal to 0 and must be sortehr then the length of variable x after which i msut increase itself by 2.
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { //in this selection I set the condition that if the user input in the searchbox mathces none of the items that are linked to the movies Class Name, then nothing should be displayed on the page, otherwise whatever matches what the user searches for should be displayed.
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+}
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- These three scripts I have used to import the functionality for the navigation bar and anything else that would need things like Bootstrap.-->
+</body> 
+</html>

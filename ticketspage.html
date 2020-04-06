@@ -1,0 +1,359 @@
+<html>
+<title>
+Tickets Page
+</title>
+<style>
+form {border: 3px solid #f7b500; width: 300px; height: 150px; border: 5px, #f7b500;}
+</style>
+<body style =" background-color: black">  <!--In this line I have created the main body of the webpage and declared it's background to be black. -->
+ <nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #f7b500 "> <!-- In this line I have created a navigation bar, I made it so that it would be able to expand if the screen size is reduced and I set it's background colour to orange.-->
+  <a class="navbar-brand" href="mainpage.html">Main Page</a> <!-- I have created a button, called Main Page and I hyperlinked it so when clicked it would take the user to the main page of the site.-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation" background-color= "#f7b500"> <!-- I have set the bar to ensure that it would be able to expand and collapse and I set its back ground colour to orange.-->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+	  <a class="nav-item nav-link active" href="moviespage.html">Movies</a> <!-- I have created a hyperlink in this label so that it would take the user to the movies page of the site.-->
+      <a class="nav-item nav-link active" href="showtimespage.html">Show Times <span class="sr-only">(current)</span></a> <!-- I have created a hyperlink in this label so that it would take the user to the show times page of the site.-->
+      <a class="nav-item nav-link active" href="index.html">Login</a> <!-- I have created a hyperlink in this label so that it would take the user to the login page of the site.-->
+	  <a class="nav-item nav-link active" href="contactpage.html">Contact</a> <!-- I have created a hyperlink in this label so that it would take the user to the contact page of the site.--> 
+    </div>
+  </div>
+      <input id="searchbar" onkeyup="search_movies()" type="text"name="search" placeholder="Search movies.."> <!-- I have created search bar and connected it to the function movies, I had ensured that it would hold a text data type. When there isn't anything else in the search bar it's automatic output would be "Search movies..."-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- In this line I have imported extra styling for the navigation bar.-->
+
+</nav>
+
+
+
+	<script>
+	function search_movies() {  //in this line i have created a new function called search_movies()
+    let input = document.getElementById('searchbar').value //in this lines I have created a variable called "input" and made it equal with any and all items that would be associated with the ID "searchbar"
+    input=input.toLowerCase(); //in this line i have set input to lower case 
+    let x = document.getElementsByClassName('movies'); //in this line I have created a new variable called x and i set it equal to the items that would be associated with the class name "movies"
+      
+    for (i = 0; i < x.length; i++) {  //in this line i have created a loop according to which i most equal to 0 and must be sortehr then the length of variable x after which i msut increase itself by 2.  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { //in this selection I set the condition that if the user input in the searchbox mathces none of the items that are linked to the movies Class Name, then nothing should be displayed on the page, otherwise whatever matches what the user searches for should be displayed.
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+}
+</script>
+<div>
+<h1 class= "movies" style = "color: #f7b500; font-family: Impact; font-size: 10vw; text-align: center;">   Tickets </h1>
+</div>
+
+<br>
+<img src="missionimp.png" alt="mission" style="width:15%;" onclick = "tickets()"> <!--In this line I would import an image and I would set it to 15% of it's original size.-->
+<h2 style = "color: #f7b500; font-family: Impact; font-size: 28px;" class = "movies">
+Mission Impossible: Fallout
+</h2> <!-- In this section I would create a second header, set its size to 28, set its colour to orange and set its font family to Impact. I set the header to "Mission Impossible: Fallout"-->
+
+<img src="skyfall.png" alt="skyfall" style="width:15%" onclick = "actionmovies()"> <!--In this line I would import an image and I would set it to 15% of it's original size.-->
+<h2 style = "color: #f7b500; font-family: Impact; font-size: 28px;" class = "movies">
+Skyfall
+</h2> <!-- In this section I would create a second header, set its size to 28, set its colour to orange and set its font family to Impact. I set the header to "Skyfall"-->
+<form style = "color: #f7b500; font-family: Impact; font-size: 30px; text-align: center;">
+Ticket Price For Children Between 5 - 15:
+£6.80
+</form> <!-- In this section I created a form and I set it's font size to 30px and I set its font family to Impact, font alignment to centre. Finally, the text in this section will read on the screen: "Ticket Price For Children Between 5 - 15:
+£6.80"-->
+<form style = "color: #f7b500; font-family: Impact; font-size: 30px; text-align: center;">
+Ticket Price For People Between 16 - 65:
+£9.80
+</form><!-- In this section i created a form and I set it's font size to 30px and I set its font family to Impact, font alignment to centre. Finally, the text in this section will read on the screen: "Ticket Price For People Between 16 - 65:
+£9.80"-->
+
+<form style = "color: #f7b500; font-family: Impact; font-size: 30px; text-align: center;">
+Ticket Price For People 65 and Above:
+£6.20
+</form> <!-- In this section i created a form and I set it's font size to 30px and I set its font family to Impact, font alignment to center. Finally the text in this section will read on the screen: "Ticket Price For People 65 and Above:
+£6.20"-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8809-1"/>
+    <link href="styles/movies.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload='hideTotal()'> <!-- In this section I create the main body of my web page and linked it to the function hidetotal.-->
+    <div id="wrap"> <!-- In this line I assign the ID "wrap" to this division.-->
+        <form style = "border: 3px solid #f7b500; width: 600px; height: 770px;" action="mainpage.html" id="movies" onsubmit="return(purchase());"> <!-- In this section-->
+        <div> <!-- In this section I create a new form and I set its border size to 3px and its colour to orange, along with its height and width to 600px-->
+            <div class="cont_order"> <!-- In this line i would create a new division and a new class called "cont_order"-->
+               <fieldset> <!-- In this line I would create a new fieldset.-->
+                <legend style = "color: #f7b500; font-family: Impact; font-size: 32px;">Buy Ticket</legend> <!-- I would create a new label on this field set set is colour to orange, set it's font family to Impact and sets its font size to 32px and it would say "Buy Ticket"-->
+                <label style = "color: #f7b500; font-family: Impact; font-size: 28px;">Choose if you want to watch you movie in 2D or 3D</label> <!-- I would create a new label on this field set set is colour to orange, set it's font family to Impact and sets its font size to 28px and it would say "Choose if you want to watch you movie in 2D or 3D"-->
+				<br>
+                <label style = "color: #f7b500; font-family: Impact; font-size: 20px;"><input type="radio"  name="selectforms" value="2D" onclick="calculateTotal()" />2D - £0.80</label><br/> <!-- I would create a radio selection and a label the label would say "2D - £0.80" I would set the size of the label to 20, it colour to orange and its font family to Impact.-->
+                <label style = "color: #f7b500; font-family: Impact; font-size: 20px;"><input type="radio"  name="selectforms" value="3D" onclick="calculateTotal()" />3D - £2.80</label><br/> <!-- I would create a radio selection and a label the label would say "3D - £2.80" I would set the size of the label to 20, it colour to orange and its font family to Impact.-->
+                <br/>
+                <label style = "color: #f7b500; font-family: Impact; font-size: 24px;">Number of People</label> <!-- I would create a new label it would read "Number of People", set its size to 24px, set its font family to impact and set its colour to orange.-->
+                <select style = "color: #f7b500; font-family: Impact; font-size: 24px;" id="numberofpeople" name='numberofpeople' onchange="calculateTotal()"> <!-- In this line I would create a new selection box, set its colour to orange, set its font family to impact and set its font size to 24px, set its id and name to "numberofpeople" and connected it to the function "calculateTotal()".-->
+                <option value="None">Select Number of People</option> <!-- i would create different text values within this table, the first one was set to "Select Number of People" and set the rest from "1 Person" to "10 People" and set the first value to "None" and the rest of the values of these fields from 1 to 10.-->
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5">5 People</option>
+                <option value="6">6 People</option>
+                <option value="7">7 People</option>
+                <option value="8">8 People</option>
+                <option value="9">9 People</option>
+                <option value="10">10 People</option>
+               </select>
+                <br/>
+
+				<label style = "color: #f7b500; font-family: Impact; font-size: 24px;">Number of Children</label> <!-- I would create a new label it would read "Number of Children", set its size to 24px, set its font family to impact and set its colour to orange.-->
+                <select style = "color: #f7b500; font-family: Impact; font-size: 24px;" id="numberofchildren" name='numberofchildren' onchange="calculateTotal()"> <!-- In this line I would create a new selection box, set its colour to orange, set its font family to impact and set its font size to 24px, set its id and name to "numberofchildren" and connected it to the function "calculateTotal()".-->
+                <option value="NoneChild">Select Number of Children</option> <!-- i would create different text values within this table, the first one was set to "Select Number of Children" and set the rest from "1 Child" to "10 Children" and set the first value to "NoneChild" and the rest of the values of these fields from 1Child to 10Child.-->
+                <option value="1Child">1 Child</option>
+                <option value="2Child">2 Children</option>
+                <option value="3Child">3 Children</option>
+                <option value="4Child">4 Children</option>
+                <option value="5Child">5 Children</option>
+                <option value="6Child">6 Children</option>
+                <option value="7Child">7 Children</option>
+                <option value="8Child">8 Children</option>
+                <option value="9Child">9 Children</option>
+                <option value="10Child">10 Children</option>
+               </select>
+			   <br/>
+		
+				<label style = "color: #f7b500; font-family: Impact; font-size: 24px;">Number of Elderly</label> <!-- I would create a new label it would read "Number of Elderly", set its size to 24px, set its font family to impact and set its colour to orange.-->
+                <select style = "color: #f7b500; font-family: Impact; font-size: 24px;" id="numberofelderly" name='numberofelderly' onchange="calculateTotal()"> <!-- In this line I would create a new selection box, set its colour to orange, set its font family to impact and set its font size to 24px, set its id and name to "numberofelderly" and connected it to the function "calculateTotal()".-->
+                <option value="NoneElderly">Select Number of Elderly</option> <!-- I would create different text values within this table, the first one was set to "Select Number of Elderly" and set the rest from "1 Elderly" to "10 Elderly" and set the first value to "NoneElderly" and the rest of the values of these fields from 1Elderly to 10Elderly.-->
+                <option value="1Elderly">1 Elderly</option>
+                <option value="2Elderly">2 Elderly</option>
+                <option value="3Elderly">3 Elderly</option>
+                <option value="4Elderly">4 Elderly</option>
+                <option value="5Elderly">5 Elderly</option>
+                <option value="6Elderly">6 Elderly</option>
+                <option value="7Elderly">7 Elderly</option>
+                <option value="8Elderly">8 Elderly</option>
+                <option value="9Elderly">9 Elderly</option>
+                <option value="10Elderly">10 Elderly</option>
+               </select>
+			   <br>
+               
+			   	<label style = "color: #f7b500; font-family: Impact; font-size: 24px;">Show Times</label> <!-- I would create a new label it would read "Show Times", set its size to 24px, set its font family to impact and set its colour to orange.-->
+			    <select style = "color: #f7b500; font-family: Impact; font-size: 24px;" id="timeofday" name='timeofday'> <!-- In this line I would create a new selection box, set its colour to orange, set its font family to impact and set its font size to 24px, set its id and name to "timeofday".-->
+                <option value="NoneDay">Select Show Times</option> <!-- i would create different text values within this table, the first one was set to "Select Show Times" and set the rest from I would set to different time periods within the seven days of the week, and set the first value to "NoneDay" and the rest of the values of these fields from Monday1 to Sunday9.-->
+                <option value="Monday1">Monday - 09.00 AM</option>
+                <option value="Monday2">Monday - 10.30 AM</option>
+                <option value="Monday3">Monday - 12.30 PM</option>
+                <option value="Monday4">Monday - 01.45 PM</option>
+                <option value="Monday5">Monday - 03.15 PM</option>
+                <option value="Monday6">Monday - 05.30 PM</option>
+                <option value="Monday7">Monday - 06.00 PM</option>
+                <option value="Monday8">Monday - 07.45 PM</option>
+                <option value="Monday9">Monday - 09.05 PM</option>
+				
+				<option value="Tuesday1">Tuesday - 09.00 AM</option>
+                <option value="Tuesday2">Tuesday - 10.00 AM</option>
+                <option value="Tuesday3">Tuesday - 11.15 AM</option>
+                <option value="Tuesday4">Tuesday - 12.30 PM</option>
+                <option value="Tuesday5">Tuesday - 02.15 PM</option>
+                <option value="Tuesday6">Tuesday - 03.45 PM</option>
+                <option value="Tuesday7">Tuesday - 05.30 PM</option>
+                <option value="Tuesday8">Tuesday - 07.45 PM</option>
+                <option value="Tuesday9">Tuesday - 09.25 PM</option>
+				
+				<option value="Wednesday1">Wednesday - 09.15 AM</option>
+                <option value="Wednesday2">Wednesday - 11.00 AM</option>
+                <option value="Wednesday3">Wednesday - 12.15 PM</option>
+                <option value="Wednesday4">Wednesday - 01.45 PM</option>
+                <option value="Wednesday5">Wednesday - 02.15 PM</option>
+                <option value="Wednesday6">Wednesday - 04.45 PM</option>
+                <option value="Wednesday7">Wednesday - 05.40 PM</option>
+                <option value="Wednesday8">Wednesday - 06.55 PM</option>
+                <option value="Wednesday9">Wednesday - 08.55 PM</option>
+				
+				<option value="Thursday1">Thursday - 08.50 AM</option>
+                <option value="Thursday2">Thursday - 10.15 AM</option>
+                <option value="Thursday3">Thursday - 11.55 AM</option>
+                <option value="Thursday4">Thursday - 01.25 PM</option>
+                <option value="Thursday5">Thursday - 03.05 PM</option>
+                <option value="Thursday6">Thursday - 04.45 PM</option>
+                <option value="Thursday7">Thursday - 06.45 PM</option>
+                <option value="Thursday8">Thursday - 07.55 PM</option>
+                <option value="Thursday9">Thursday - 09.25 PM</option>
+				
+				<option value="Friday1">Friday - 08.45 AM</option>
+                <option value="Friday2">Friday - 11.15 AM</option>
+                <option value="Friday3">Friday - 12.55 PM</option>
+                <option value="Friday4">Friday - 01.55 PM</option>
+                <option value="Friday5">Friday - 02.45 PM</option>
+                <option value="Friday6">Friday - 03.35 PM</option>
+                <option value="Friday7">Friday - 05.30 PM</option>
+                <option value="Friday8">Friday - 07.15 PM</option>
+                <option value="Friday9">Friday - 08.45 PM</option>
+				
+				<option value="Saturday1">Saturday - 09.45 AM</option>
+                <option value="Saturday2">Saturday - 10.35 AM</option>
+                <option value="Saturday3">Saturday - 11.55 AM</option>
+                <option value="Saturday4">Saturday - 12.55 PM</option>
+                <option value="Saturday5">Saturday - 02.00 PM</option>
+                <option value="Saturday6">Saturday - 03.55 PM</option>
+                <option value="Saturday7">Saturday - 04.30 PM</option>
+                <option value="Saturday8">Saturday - 07.15 PM</option>
+                <option value="Saturday9">Saturday - 09.45 PM</option>
+				
+				<option value="Sunday1">Sunday - 10.45 AM</option>
+                <option value="Sunday2">Sunday - 11.35 AM</option>
+                <option value="Sunday3">Sunday - 12.55 AM</option>
+                <option value="Sunday4">Sunday - 01.55 PM</option>
+                <option value="Sunday5">Sunday - 03.00 PM</option>
+                <option value="Sunday6">Sunday - 04.35 PM</option>
+                <option value="Sunday7">Sunday - 06.30 PM</option>
+                <option value="Sunday8">Sunday - 07.15 PM</option>
+                <option value="Sunday9">Sunday - 08.15 PM</option>
+               </select> <!--I would end the select form.-->
+				<br>
+                <div id="totalPrice"></div> <!-- I would create a new division and give it the id "totalPrice"-->
+                
+                </fieldset> <!-- I would end the fieldset.-->
+            </div>
+			
+            
+        	<div class="card_details"> <!-- I would create a new class and call it "card_details"-->
+            	<fieldset> <!-- I would create a new fieldset.-->
+                <legend style = "color: #f7b500; font-family: Impact; font-size: 24px;">Card Details</legend> <!-- I would create a new head label within this field set, it would read "Card Details", sets its font size to 24px, set its colour to orange and set its font family to Impact.-->
+                <label style = "color: #f7b500; font-family: Impact; font-size: 20px;" for='CardNumber'>Card Number</label> <!-- I would create a label within this field set, it would read "Card Number", sets its font size to 20px, set its colour to orange and set its font family to Impact.-->
+                <input style = "color: #f7b500; font-family: Impact; font-size: 20px;" type="text" maxlength = "16" id="CardNumber" name='CardNumber' required /> <!-- I would create a new input box set its id and name to "CardNumber", set its type to be text and set its maximum length to 16 to ensure that only the right amount of numbers could be typed in. I would set it to require to ensure that the user couldn't proceed without it.-->
+                <br/>
+                <label style = "color: #f7b500; font-family: Impact; font-size: 20px;" for='nameoncard'>Name on Card</label> <!-- I would create a label within this field set, it would read "Name on Card", sets its font size to 20px, set its colour to orange and set its font family to Impact.-->
+                <input style = "color: #f7b500; font-family: Impact; font-size: 20px;" type="text" id="nameoncard" name='nameoncard' required /> <!-- I would create a new input box set its id and name to "nameoncard", set its type to be text. I would set it to require to ensure that the user couldn't proceed without it.-->
+                <br/>
+                <label style = "color: #f7b500; font-family: Impact; font-size: 20px;" for='date'>Date to Expire</label> <!-- I would create a label within this fieldset, it would read "Date to Expire", sets its font size to 20px, set its colour to orange and set its font family to Impact.-->
+                <input style = "color: #f7b500; font-family: Impact; font-size: 20px;" type="date" id="date" name='date' required /> <!-- I would create a new input box set its id and name to "date", set its type to be date. I would set it to require to ensure that the user couldn't proceed without it.-->
+                <br/>
+				<label style = "color: #f7b500; font-family: Impact; font-size: 20px;" for='code'>Security Code</label> <!-- I would create a label within this fieldset, it would read "Date to Expire", sets its font size to 20px, set its colour to orange and set its font family to Impact.-->
+                <input style = "color: #f7b500; font-family: Impact; font-size: 20px;" type="text" maxlength = "3" id="code" name='code' required /> <!-- I would create a new input box set its id and name to "code", set its type to be text and set its maximum length to 3 to ensure that only the right amount of numbers could be typed in. I would set it to require to ensure that the user couldn't proceed without it.-->
+                <br/>
+                </fieldset> <!-- I would end the fieldset.-->
+				<button type = "submit" style = "background-color: black; font-family: Impact; color: #f7b500; border-radius: 128px; font-size: 500%; padding: 20px;">Submit</button>             <!-- I would create a button and I would make it a submit type button, i would set its family font to Impact, set its colour to black, sets its border radius to 128px and set its font size to 500% of its original self and sets its padding to 20px. The button would contain the world "Submit"-->
+			</div>
+            
+        </div>  
+       </form>
+	   
+	</div>
+
+<script> //I would start the JavaScript.
+      function purchase() { //I would create a new function called purchase.
+     
+		  alert( "You have purchased your tickets!" ); //This line would create a new message box on the top of the page and it would contain the phrase "You have purchased your tickets!"
+		  location.replace("mainpage.html"); //This line would send the user to the main page of the web site.
+		}
+
+ var TICKET_prices = new Array(); //I would create a new variable i would call it TICKET_prices and I would set it equal to a new array.
+ TICKET_prices["2D"]=0.80;
+ TICKET_prices["3D"]=2.80; //The values of the values within the select box of 2D and 3D would be set to  0.8 and 2.8 respectively.
+ 
+ var numberofpeople_prices= new Array(); //I would create a new variable i would call it numberofpeople and I would set it equal to a new array.
+ numberofpeople_prices["None"]=0; //The value of None in the number of people selection field is set to 0.
+ numberofpeople_prices["1"]=9.80; //The values between 1 and 10 within the people selection field have been set from 9.8 to 9.80*10 respectively.
+ numberofpeople_prices["2"]=9.80*2;
+ numberofpeople_prices["3"]=9.80*3;
+ numberofpeople_prices["4"]=9.80*4;
+ numberofpeople_prices["5"]=9.80*5;
+ numberofpeople_prices["6"]=9.80*6;
+ numberofpeople_prices["7"]=9.80*7;
+ numberofpeople_prices["8"]=9.80*8;
+ numberofpeople_prices["9"]=9.80*9;
+ numberofpeople_prices["10"]=9.80*10;
+ 
+ var numberofchildren_prices= new Array(); //I would create a new variable i would call it numberofpeople and I would set it equal to a new array.
+ numberofchildren_prices["NoneChild"]=0; //The value of NoneChild in the number of child selection field is set to 0.
+ numberofchildren_prices["1Child"]=6.80; //The values between 1Child and 10Child within the child selection field have been set from 6.8 to 6.80*10 respectively.
+ numberofchildren_prices["2Child"]=6.80*2;
+ numberofchildren_prices["3Child"]=6.80*3;
+ numberofchildren_prices["4Child"]=6.80*4;
+ numberofchildren_prices["5Child"]=6.80*5;
+ numberofchildren_prices["6Child"]=6.80*6;
+ numberofchildren_prices["7Child"]=6.80*7;
+ numberofchildren_prices["8Child"]=6.80*8;
+ numberofchildren_prices["9Child"]=6.80*9;
+ numberofchildren_prices["10Child"]=6.80*10;
+ 
+ var numberofelderly_prices= new Array(); //I would create a new variable i would call it numberofpeople and i would set it equal to a new array.
+ numberofelderly_prices["NoneElderly"]=0; //The value of NoneElderly in the number of child selection field is set to 0.
+ numberofelderly_prices["1Elderly"]=6.20; //The values between 1Elderly and 10Elderly within the child selection field have been set from 6.2 to 6.20*10 respectively.
+ numberofelderly_prices["2Elderly"]=6.20*2;
+ numberofelderly_prices["3Elderly"]=6.20*3;
+ numberofelderly_prices["4Elderly"]=6.20*4;
+ numberofelderly_prices["5Elderly"]=6.20*5;
+ numberofelderly_prices["6Elderly"]=6.20*6;
+ numberofelderly_prices["7Elderly"]=6.20*7;
+ numberofelderly_prices["8Elderly"]=6.20*8;
+ numberofelderly_prices["9Elderly"]=6.20*9;
+ numberofelderly_prices["10Elderly"]=6.20*10;
+ 
+  
+function getMovieTicketPrice() //I would create a new function called getMovieTicketPrice.
+{  
+    var getMovieTicketPrice=0; //i would set the new variable getMovieTicketPrice to 0.
+    var theForm = document.forms["movies"]; //I would set the new variable theForm to all the items that are in the movies form.
+    var selectforms = theForm.elements["selectforms"]; //i would creae a new variable called selectforms and set it equal to the elements that have the class selectforms.
+    for(var i = 0; i < selectforms.length; i++) //i created a loop and create a variable called "i" the value of "i" would be 0 and it would lower the length of the variable selectforms, the value of i then will need to increase by 2.
+    {
+        if(selectforms[i].checked) //in this selection of the loop if the i of the variable selectforms gets checked then the variable getMovieTicketPrice must be set equal TICKET_prices[selectforms[i].value]
+        {
+            getMovieTicketPrice = TICKET_prices[selectforms[i].value];
+        }
+    }
+    return getMovieTicketPrice; //the variable getMovieTicketPrice is returned
+}
+
+function getnumberofpeoplePrice() //a new function called getnumberofpeoplePrice is created 
+{
+    var numberofpeoplePrice=0; //the variable numberofpeoplePrice is set to 0
+    var theForm = document.forms["movies"]; // the variable theForm is set to all of the objects that are within the form class "movies"
+    var selectednumberofpeople = theForm.elements["numberofpeople"]; //the new variable selectednumberofpeople is set equal to the variable theForm that contains the elements associated with "numberofpeople"
+     
+    numberofpeoplePrice = numberofpeople_prices[selectednumberofpeople.value]; //the variable numberofpeoplePrice is set equal to the selected value of numberofpeople_prices
+    return numberofpeoplePrice; //return the variable numberofpeoplePrice
+}
+
+function getnumberofpeopleChildren() //a new function calleed getnumberofpeopleChildren is created 
+{
+    var numberofChildrenPrice=0; //the variable numberofChildrenPrice is set to 0
+    var theForm = document.forms["movies"]; // the variable theForm is set to all of the objects that are within the form class "movies"
+    var selectednumberofChildren = theForm.elements["numberofchildren"]; //the new variable selectednumberofChildren is set equal to the variable theForm that contains the elements associated with "numberofchildren"
+    numberofChildrenPrice = numberofchildren_prices[selectednumberofChildren.value]; //the variable numberofChildrenPrice is set equal to the selected value of numberofchildren_prices
+    return numberofChildrenPrice; //return the variable numberofChildrenPrice
+}
+
+function getnumberofElderly() //a new function called getnumberofElderly is created 
+{
+    var numberofElderlyPrice=0; //the variable numberofChildrenPrice is set to 0
+    var theForm = document.forms["movies"]; // the variable theForm is set to all of the objects that are within the form class "movies"
+    var selectednumberofElderly = theForm.elements["numberofelderly"]; //the new variable selectednumberofElderly is set equal to the variable theForm that contains the elements associated with "numberofelderly"
+    numberofElderlyPrice = numberofelderly_prices[selectednumberofElderly.value]; //the variable numberofElderlyPrice is set equal to the selected value of numberofelderly_prices
+    return numberofElderlyPrice; //return the variable numberofElderlyPrice
+}
+
+        
+function calculateTotal() //I would create a new function and call it calculateTotal
+{
+    var totalPrice = getMovieTicketPrice() + getnumberofpeoplePrice() + getnumberofpeopleChildren() + getnumberofElderly() //a new variable called totalPrice is created and its set equal to functions getMovieTicketPrice() getnumberofpeoplePrice() and getnumberofpeopleChildren() and getnumberofElderly() 
+    var finalprice = document.getElementById('totalPrice'); //a new variable called finalprice is created and its set equal to all of the objects that are associated with the ID totalPrice
+    finalprice.style.display='block'; //variable finalprice's style is set in a block display
+    finalprice.innerHTML = "Total Price For the Tickets £"+totalPrice; //finalprice is set equal to the message "Total Price For the Tickets £" that must be outputted and the variable totalPrice.
+
+}
+
+
+function hideTotal() //a new function is created called hideTotal
+{
+    var finalprice = document.getElementById('totalPrice'); //a new variable called finalprice is created and its set equal to all of the objects that are associated with the ID totalPrice 
+    finalprice.style.display='none'; //variable finalprice must not be displayed.
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- These three scripts I have used to import the functionality for the navigation bar and anything else that would need things like Bootstrap.-->
+
+</body>
+</html>
